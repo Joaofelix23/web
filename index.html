@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web · João Felix · Portfólio 2026</title>
+<meta name="description" content="Sites criados do zero: HTML, CSS e JavaScript, do briefing ao deploy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terra:#360b13; --cream:#fefdd7; --caramelo:#b26c3b; --pedra:#e6d9d4;
+  --marrom:#3b1f1b; --ink:#0f0e0d; --dark:#161412;
+  --f:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.16,.84,.24,1);
+  --pad:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--f);background:var(--dark);color:var(--pedra);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:clip}
+a{color:inherit}
+
+/* barra superior */
+.bar{background:var(--terra);color:var(--cream);position:sticky;top:0;z-index:20}
+.bar-in{max-width:1480px;margin:0 auto;padding:18px var(--pad);display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;font-size:15px}
+.bar a{text-decoration:none}
+.bar .back{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;opacity:.9;transition:opacity .25s,transform .25s}
+.bar .back:hover{opacity:1;transform:translateX(-3px)}
+
+main{max-width:1480px;margin:0 auto;padding:var(--pad)}
+
+/* herói */
+.hero{background:var(--cream);color:var(--ink);border-radius:22px;padding:clamp(24px,4vw,56px);display:grid;gap:28px}
+.hero h1{font-weight:800;text-transform:uppercase;letter-spacing:-.065em;line-height:.82;font-size:clamp(88px,22vw,340px)}
+.hero .lead{max-width:62ch;font-size:clamp(16px,1.5vw,20px);line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{border:1.5px solid currentColor;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+
+/* seções */
+.sec{margin-top:var(--pad)}
+.grid2{display:grid;grid-template-columns:1fr 1.4fr;gap:var(--pad)}
+.panel{border-radius:22px;padding:clamp(22px,3vw,40px)}
+.p-brown{background:var(--marrom);color:var(--cream)}
+.p-stone{background:var(--pedra);color:var(--ink)}
+.p-terra{background:var(--terra);color:var(--cream)}
+.p-cara{background:var(--caramelo);color:var(--ink)}
+.kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:14px;opacity:.85}
+h2{font-weight:800;text-transform:uppercase;letter-spacing:-.05em;line-height:.88;font-size:clamp(40px,6vw,92px)}
+.panel p{font-size:16px;line-height:1.6;max-width:64ch}
+.panel p+p{margin-top:14px}
+
+/* etapas */
+.steps{display:grid;gap:0;margin-top:6px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-top:1px solid rgba(15,14,13,.25)}
+.step:first-child{border-top:0;padding-top:0}
+.step b{font-size:13px;font-weight:800;padding-top:3px}
+.step h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
+.step p{font-size:15px;line-height:1.55}
+
+/* cards dos sites */
+.sites{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--pad)}
+.site{display:flex;flex-direction:column;justify-content:space-between;gap:48px;text-decoration:none;border-radius:22px;padding:clamp(22px,2.6vw,34px);min-height:300px;transition:transform .45s var(--ease),border-radius .45s ease,box-shadow .45s ease}
+.site:hover{transform:translateY(-7px);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.site h3{font-weight:800;text-transform:uppercase;letter-spacing:-.055em;line-height:.88;font-size:clamp(34px,4.2vw,64px);transition:letter-spacing .45s ease}
+.site:hover h3{letter-spacing:-.065em}
+.site .sm{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:8px}
+.site p{font-size:14px;line-height:1.45;max-width:44ch}
+.site .row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.site .arrow svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square;transition:transform .35s var(--ease)}
+.site:hover .arrow svg{transform:translate(5px,-5px)}
+.s1{background:var(--cream);color:var(--ink)}
+.s2{background:var(--caramelo);color:var(--ink)}
+.s3{background:var(--pedra);color:var(--ink)}
+.s4{background:var(--marrom);color:var(--cream)}
+.s5{background:var(--terra);color:var(--cream)}
+.url{font-size:12.5px;font-weight:500;opacity:.75;margin-top:10px;word-break:break-all}
+
+/* namata */
+.case{display:grid;grid-template-columns:1fr 1.2fr;gap:var(--pad);align-items:start}
+.case ul{list-style:none;margin-top:18px;display:grid;gap:10px}
+.case li{display:flex;gap:10px;font-size:15px;line-height:1.5}
+.case li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:currentColor;margin-top:9px}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:26px;border:1.5px solid currentColor;border-radius:99px;padding:12px 22px;font-weight:700;font-size:13px;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s,transform .3s}
+.btn:hover{background:var(--cream);color:var(--terra);transform:translateY(-2px)}
+
+footer{margin-top:var(--pad);border-radius:22px;background:var(--cream);color:var(--ink);padding:clamp(22px,3vw,40px)}
+.back-hub{display:inline-block;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;font-size:clamp(24px,3vw,40px);text-decoration:none;transition:transform .35s var(--ease)}
+.back-hub:hover{transform:translateX(-6px)}
+
+[data-r]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-r]{opacity:1;transform:none;transition:none}.site,.site h3{transition:none}}
+
+@media (max-width:900px){
+  :root{--pad:14px}
+  .grid2,.case,.sites{grid-template-columns:1fr}
+  .site{min-height:240px}
+  .bar-in{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a href="https://jfeelix-hub.vercel.app/" class="back" aria-label="Voltar ao hub">← Voltar</a>
+    <span>João Felix</span>
+    <span>2026</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" data-r>
+    <h1>Web</h1>
+    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Do zero</span></div>
+    <p class="lead">Todos os sites deste portfólio, e os que entreguei para clientes, foram criados do zero: sem templates, sem construtores de página, sem blocos prontos. Cada projeto nasceu de um briefing, ganhou identidade própria e foi publicado no ar.</p>
+  </section>
+
+  <section class="sec grid2">
+    <div class="panel p-brown" data-r>
+      <div class="kicker">Sobre este trabalho</div>
+      <h2>Como foi feito</h2>
+    </div>
+    <div class="panel p-stone" data-r>
+      <p>Meu ponto de partida é o mesmo de uma campanha: entender o objetivo, o público e a marca antes de abrir qualquer arquivo. Só depois disso a página ganha estrutura, paleta, tipografia e ritmo.</p>
+      <p>Os sites foram desenvolvidos com apoio de inteligência artificial, usada como ferramenta de produção de código. Eu defino o conceito, a estrutura, a identidade visual e o conteúdo, e passo essas instruções de forma detalhada para que a IA escreva o código. O resultado nunca é aproveitado como veio: cada versão é lida, testada no celular e no computador, editada e refinada por mim, em quantas rodadas forem necessárias.</p>
+      <p>Isso significa que a direção de arte, os textos, as decisões de layout e a aprovação final são minhas. A IA acelera a execução; o critério e a curadoria são humanos.</p>
+      <p>Todos os projetos foram criados do zero, sem templates ou construtores de página, em HTML, CSS e JavaScript, com versionamento no GitHub e publicação na Vercel.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="panel p-cara" data-r>
+      <div class="kicker">Processo</div>
+      <div class="steps">
+        <div class="step"><b>01</b><div><h3>Briefing e conteúdo</h3><p>Levantamento do objetivo, do público e de tudo o que a página precisa comunicar, com textos e imagens organizados antes do layout.</p></div></div>
+        <div class="step"><b>02</b><div><h3>Direção de arte</h3><p>Definição de paleta, tipografia e estrutura da página, pensadas para refletir a identidade do projeto e funcionar bem no celular.</p></div></div>
+        <div class="step"><b>03</b><div><h3>Geração do código</h3><p>Criação das páginas do zero com apoio de IA, a partir das minhas instruções detalhadas de estrutura, estilo e comportamento.</p></div></div>
+        <div class="step"><b>04</b><div><h3>Edição e refino</h3><p>Revisão manual de tudo o que foi gerado: espaçamento, responsividade, animações, textos e detalhes, em quantas rodadas forem necessárias.</p></div></div>
+        <div class="step"><b>05</b><div><h3>Publicação</h3><p>Versionamento no GitHub e deploy na Vercel, com cada alteração publicada e testada no ar.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sites">
+      <a class="site s5" data-r href="https://jfeelix-hub.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <div class="sm">Hub principal</div>
+        <div>
+          <h3>Portfólio</h3>
+          <div class="row">
+            <div><p>A porta de entrada do portfólio: apresentação, experiência e acesso a cada frente de trabalho.</p><div class="url">jfeelix-hub.vercel.app</div></div>
+            <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="site s1" data-r href="https://portif-lio-jfeelix.vercel.app" target="_blank" rel="noopener noreferrer">
+        <div class="sm">Atendimento · Estratégia · Campanhas</div>
+        <div>
+          <h3>Trabalhos</h3>
+          <div class="row">
+            <div><p>Cases de campanhas, ações e eventos conduzidos do briefing à execução.</p><div class="url">portif-lio-jfeelix.vercel.app</div></div>
+            <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="site s2" data-r href="https://designs-jfeelix.vercel.app" target="_blank" rel="noopener noreferrer">
+        <div class="sm">Direção de arte · Design gráfico</div>
+        <div>
+          <h3>Designs</h3>
+          <div class="row">
+            <div><p>Projetos visuais, experimentações gráficas, identidades e direção de arte reunidos em um só lugar.</p><div class="url">designs-jfeelix.vercel.app</div></div>
+            <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="site s3" data-r href="https://fotos-jfeelix.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <div class="sm">Fotografia · Lightroom</div>
+        <div>
+          <h3>Fotos</h3>
+          <div class="row">
+            <div><p>Galeria de fotografia de eventos, shows e retratos autorais, com edição própria.</p><div class="url">fotos-jfeelix.vercel.app</div></div>
+            <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="site s4" data-r href="https://organico-street.vercel.app" target="_blank" rel="noopener noreferrer">
+        <div class="sm">Branding · Streetwear consciente</div>
+        <div>
+          <h3>Marca</h3>
+          <div class="row">
+            <div><p>Projeto da marca OrganiCo®: conceito sustentável, upcycling de brechós, embalagens plantáveis e coleções.</p><div class="url">organico-street.vercel.app</div></div>
+            <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a class="site s1" data-r href="https://nacopa-namata.vercel.app" target="_blank" rel="noopener noreferrer">
+        <div class="sm">Cliente · Namata</div>
+        <div>
+          <h3>NaCopa</h3>
+          <div class="row">
+            <div><p>Site da Namata criado para acompanhar a Copa, com placares, classificações e um jogo com ranking.</p><div class="url">nacopa-namata.vercel.app</div></div>
+            <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="sec case">
+    <div class="panel p-terra" data-r>
+      <div class="kicker">Case de cliente</div>
+      <h2>Namata</h2>
+      <a class="btn" href="https://nacopa-namata.vercel.app" target="_blank" rel="noopener noreferrer">Ver o site no ar ↗</a>
+    </div>
+    <div class="panel p-stone" data-r>
+      <p>A Namata foi meu primeiro cliente. Além das campanhas, desenvolvi para ela um site pensado para rodar junto da Copa: uma página própria, criada do zero e publicada no ar durante o torneio.</p>
+      <ul>
+        <li>Integração por API conectada a dados do Google, exibindo resultados dos jogos, placares e classificações.</li>
+        <li>Um jogo dentro do site, com ranking: quem ficava em primeiro lugar ganhava desconto no restaurante.</li>
+        <li>Construção em HTML, CSS e JavaScript, sem template, com layout pensado para o celular.</li>
+        <li>Atendimento do início ao fim: do briefing à publicação na Vercel.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer data-r>
+    <a class="back-hub" href="https://jfeelix-hub.vercel.app/">← Voltar ao hub</a>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var els=document.querySelectorAll("[data-r]");
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function all(){els.forEach(function(e){e.classList.add("in")})}
+  if(reduce||!("IntersectionObserver" in window)){all();return}
+  var o=new IntersectionObserver(function(es){
+    es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}})
+  },{threshold:.05,rootMargin:"0px 0px 30px 0px"});
+  els.forEach(function(e){o.observe(e)});
+  setTimeout(all,2500);
+})();
+</script>
+</body>
+</html>
